@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Produto</title>
+</head>
+<body>
+    <div>
+        <h3>Cadastro de Produtos</h3>
+        </div>
+        <form>
+            <div>
+                <label for="nome">Nome: </label>
+                <input type="text" name="nome">
+            </div>
+            <br>
+            <div>
+                <label for="valor">Valor: </label>
+                <input type="number" name="valor">
+            </div>
+            <br>
+            <div>
+                <label for="quantidade">Quantidade: </label>
+                <input type="number" name="quantidade">
+            </div>
+            <br>
+            <div>
+                Está disponível:
+                <br>
+                <label for="disponibilidade">Sim </label>
+                <input type="radio" name="disponibilidade" value="sim">
+                <label for="disponibilidade">Não </label>
+                <input type="radio" name="disponibilidade" value="nao">
+            </div>
+            <br>
+            <!--
+            <div>
+                Estado Civil:
+                <br>
+                <label for="estado-civil">Solteiro(a) </label>
+                <input type="radio" name="estadoCivil" value="solteiro">
+                <label for="estado-civil">Casado(a) </label>
+                <input type="radio" name="estadoCivil" value="casado">
+            </div>
+            -->
+            <br>
+            <div>
+                <label for="tipo">Tipo de produto: </label>
+                <select name="tipo">
+                    <option>Alimento</option>
+                    <option>Remédio</option>
+                    <option>Higiene</option>
+                    <option>Limpeza</option>
+                    <option>Utilidades</option>
+                </select>
+            </div>
+            <br>
+            <div>
+            <input type="checkbox" name="privacidade"> 
+            <label for="privacidade">Aceite os termos de políticas de privacidade</label>
+            </div>
+            <br>
+            <!--
+            <div>
+                <label for="obs">Observação: </label>
+                <textarea rows="4" cols="40"></textarea> 
+            </div>
+            -->
+            <br>
+            <div>
+                <button type="submit">Enviar</button>
+                <button type="button"><a href="produtos.html">Voltar</a></button>
+            </div>
+    
+        </form>
+</body>
+</html>

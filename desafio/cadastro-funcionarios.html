@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+</head>
+<body>
+    <div>
+    <h3>Cadastro de Funcionário</h3>
+    </div>
+    <form>
+        <div>
+            <label for="nome">Nome: </label>
+            <input type="text" name="nome">
+        </div>
+        <br>
+        <div>
+            <label for="email">E-mail: </label>
+            <input type="email" name="email">
+        </div>
+        <br>
+        <div>
+            <label for="idade">idade: </label>
+            <input type="number" name="idade">
+        </div>
+        <br>
+        <div>
+            Sexo:
+            <br>
+            <label for="sexo">Masculino </label>
+            <input type="radio" name="sexo" value="masculino">
+            <label for="sexo">Feminino </label>
+            <input type="radio" name="sexo" value="feminino">
+        </div>
+        <br>
+        <div>
+            Estado Civil:
+            <br>
+            <label for="estado-civil">Solteiro(a) </label>
+            <input type="radio" name="estadoCivil" value="solteiro">
+            <label for="estado-civil">Casado(a) </label>
+            <input type="radio" name="estadoCivil" value="casado">
+        </div>
+        <br>
+        <div>
+            <label for="profissao">Profissão: </label>
+            <select name="profissao">
+                <option>Programador</option>
+                <option>Analista</option>
+                <option>Designer</option>
+            </select>
+        </div>
+        <br>
+        <div>
+        <input type="checkbox" name="privacidade"> 
+        <label for="privacidade">Aceite os termos de políticas de privacidade</label>
+        </div>
+        <br>
+        <div>
+            <label for="obs">Observação: </label>
+            <textarea rows="4" cols="40"></textarea> 
+        </div>
+        <br>
+        <div>
+            <button type="submit">Enviar</button>
+            <button type="button"><a href="funcionarios.html">Voltar</a></button>
+        </div>
+
+    </form>
+</body>
+</html>
