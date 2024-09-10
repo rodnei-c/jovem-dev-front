@@ -1,0 +1,89 @@
+* {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+.grid-container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    grid-template-rows: 90px 1fr;
+    grid-row: 45px 1fr;
+    grid-template-areas: 
+    'divHeader divHeader'
+    'divMenu divContent';
+}
+
+.div-header {
+    grid-area: divHeader;
+    background-color: cadetblue;
+    display: flex;
+    
+}
+
+.div-menu {
+    grid-area: divMenu;
+    background-color: rgb(114, 203, 206);
+    
+}
+
+.div-content {
+    grid-area: divContent;
+    background-color: rgb(255, 255, 255);
+    padding: 15px;
+}
+
+
+
+.trierlogo {
+    padding: 10px;
+    height:  70px;
+}
+
+.site-nome {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-top: 35px;
+    padding-left: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.menu-btn {
+    height: 50px;
+    padding: 25px;
+}
+
+.btn-site {
+    border-radius: 10px;
+    border: 2px solid;
+    border-color: rgb(157, 157, 197);
+    background-color:cadetblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:azure;
+    width: 125px;
+}
+
+.btn-site:hover {
+    color: black;
+    background-color: aquamarine;
+    transition: 0.6s;
+    cursor: pointer;
+    animation: ease-in-out;
+}
+
+@media only screen and (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: 30px, 1fr, 1fr;
+        grid-template-areas: 
+        'divHeader'
+        'divMenu'
+        'divContent';
+    }
+
+    .div-menu {
+        grid-area: divMenu;
+        background-color: rgb(114, 203, 206);
+    }
+}
