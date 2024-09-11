@@ -72,6 +72,10 @@
     animation: ease-in-out;
 }
 
+.func-cad-title {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 @media only screen and (max-width: 600px) {
     .grid-container {
         grid-template-columns: repeat(1, 1fr);

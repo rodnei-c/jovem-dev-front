@@ -46,7 +46,7 @@ ul, a {
 
 .main-menu {
     display: flex;
-    width: 390px;
+    width: 250px;
     height: 100%;
     background-color: cadetblue;
 }
