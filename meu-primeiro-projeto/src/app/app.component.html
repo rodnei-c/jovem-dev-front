@@ -1,2 +1,44 @@
-<app-componente-header></app-componente-header>
-<app-componente-content></app-componente-content>
+<!-- <app-componente-header [tituloDoPai]="title" (trocarTituloEvent)="trocarTitulo($event)" (pesquisar)="eventEmit($event)"></app-componente-header>
+{{ procurar }}
+<app-componente-content></app-componente-content> -->
+
+<app-component-cadastro (cliente)="adicionar($event)"></app-component-cadastro>
+<app-component-listagem></app-component-listagem>
+
+<table *ngFor="let cliente of clienteNomes">
+  <tr>
+    <td>
+      {{ cliente }}
+    </td>
+    <td>
+      <button>Editar</button>
+    </td>
+    <td>
+      <button>Excluir</button>
+    </td>
+  </tr>
+</table>
+
+
+<!-- <div *ngIf="clientes.length > 0">Clientes</div>
+
+<ng-template #elseBlock>
+  <div>Não há clientes</div>
+</ng-template>
+
+<div *ngFor="let cliente of clientes" >
+  {{ cliente.nome }}
+</div>
+
+<table>
+  <tr>
+    <th>
+      Nome
+    </th>
+  </tr>
+  <tr *ngFor="let cliente of clientes">
+    <td>
+      {{ cliente.nome }}
+    </td>
+  </tr>
+</table> -->

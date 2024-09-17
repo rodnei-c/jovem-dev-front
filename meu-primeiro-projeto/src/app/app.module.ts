@@ -7,13 +7,17 @@ import { MeuPrimeiroComponenteComponent } from './meu-primeiro-componente/meu-pr
 import { ComponenteHeaderComponent } from './componente-header/componente-header.component';
 import { ComponenteContentComponent } from './componente-content/componente-content.component';
 import { FormsModule } from '@angular/forms';
+import { ComponentCadastroComponent } from './component-cadastro/component-cadastro.component';
+import { ComponentListagemComponent } from './component-listagem/component-listagem.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MeuPrimeiroComponenteComponent,
     ComponenteHeaderComponent,
-    ComponenteContentComponent
+    ComponenteContentComponent,
+    ComponentCadastroComponent,
+    ComponentListagemComponent
   ],
   imports: [
     BrowserModule,

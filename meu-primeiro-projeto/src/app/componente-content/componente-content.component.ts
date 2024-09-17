@@ -10,6 +10,9 @@ export class ComponenteContentComponent {
   titulo = 'Hello World';
   meuLink = 'google.com';
   valorInput = '';
+  nomeInput = '';
+  emailInput = '';
+  telInput = '';
 
   meuMetodo(){
     alert('olá');

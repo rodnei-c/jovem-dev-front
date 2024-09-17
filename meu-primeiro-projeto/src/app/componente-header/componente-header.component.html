@@ -1,7 +1,10 @@
 <header class="header">
   <div class="logo-name">
       <img src="../../assets/R.png" class="trierlogo" name="logo">
-      <label for="logo" class="site-nome">Trier Sistemas</label>
+      <label for="logo" class="site-nome">{{ titulo }} {{ tituloDoPai }}</label>
+      <button (click)="trocarTitulo()">Trocar Titulo</button>
+      <input type="text" id="pesquisa" name="pesquisar" [(ngModel)]="search" (mouseout)="eventEmit()">
+      <button (click)="eventEmit()">Pesquisar</button>
   </div>
   <nav>
       <ul class="menu">
