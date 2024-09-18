@@ -7,14 +7,24 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ComponentCadastroComponent {
 
-
-  @Input() clientePai?: string;
-  @Output() cliente = new EventEmitter<string>();
-
+  id: number = 0;
   nome: string = '';
+
+  @Input() clientePai?: {
+    id: number,
+    nome: string
+  };
+  @Output() cliente = new EventEmitter<{
+    id: number,
+    nome: string
+  }>();
+
+
 
   adicionar(){
     console.log(this.nome);
-    this.cliente.emit(this.nome);
+    this.cliente.emit({
+      id: this.id,
+      nome: this.nome});
   }
 }
