@@ -1,0 +1,18 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  height: 100%;
+}
+
+.navegacao {
+  background-color: azure;
+  height: fit-content;
+}
+
+.lista-nav {
+  justify-content: space-between;
+}
+
+.active {
+  text-decoration: none;
+}

@@ -2,22 +2,20 @@
 {{ procurar }}
 <app-componente-content></app-componente-content> -->
 
-<app-component-cadastro (cliente)="adicionar($event)"></app-component-cadastro>
-<app-component-listagem></app-component-listagem>
+<!-- <app-component-cadastro (addClientEvent)="adicionar($event)"></app-component-cadastro>
+<app-component-listagem (removeClientEvent)="deletar($event)" [clientes]="clients"></app-component-listagem> -->
 
-<table *ngFor="let cliente of clienteNomes">
-  <tr>
-    <td>
-      {{ cliente }}
-    </td>
-    <td>
-      <button>Editar</button>
-    </td>
-    <td>
-      <button>Excluir</button>
-    </td>
-  </tr>
-</table>
+<header>
+  <ul>
+    <li>
+      <a routerLink="cadastro" routerLinkActive="active">Cadastro</a>
+    </li>
+    <li>
+      <a routerLink="lista" routerLinkActive="active">Listagem</a>
+    </li>
+  </ul>
+</header>
+<router-outlet></router-outlet>
 
 
 <!-- <div *ngIf="clientes.length > 0">Clientes</div>

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output, Input } from '@angular/core';
+import { Client } from '../models/cliente';
 
 @Component({
   selector: 'app-component-listagem',
@@ -7,7 +8,18 @@ import { Component, EventEmitter, Output, Input } from '@angular/core';
 })
 export class ComponentListagemComponent {
 
-  tabela = document.getElementById('tabela');
 
+  @Output() editClientEvent = new EventEmitter<Client>();
+  @Output() removeClientEvent = new EventEmitter<number>();
+  @Input() clientes?: Array<Client>;
+
+  deletar(id?: number) {
+    if(id || id == 0){
+      this.removeClientEvent.emit(id);
+    }
+  }
+  editar() {
+    this.editClientEvent.emit();
+  }
 
 }

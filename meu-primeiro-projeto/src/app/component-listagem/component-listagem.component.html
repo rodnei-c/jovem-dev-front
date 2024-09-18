@@ -10,6 +10,19 @@
       Deletar
     </th>
   </tr>
+  <table>
+    <tr *ngFor="let cliente of clientes">
+      <td>
+        {{ cliente.name }}
+      </td>
+      <td>
+        <button (click)="editar()">Editar</button>
+      </td>
+      <td>
+        <button (click)="deletar(cliente.id)">Excluir</button>
+      </td>
+    </tr>
+  </table>
   <!-- <tr>
     <td>
       {{ cliente }}

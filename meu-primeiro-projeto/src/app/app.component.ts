@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Client } from './models/cliente';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +9,20 @@ import { Component } from '@angular/core';
 export class AppComponent {
   // title = 'meu-primeiro-projeto';
 
-  nomes = ''
+  clients: Array<Client> = []
 
-  clienteNomes = [];
+  adicionar(client: Client){
+    console.log(client);
+    this.clients.push(client);
+    console.log(this.clients.length);
+  }
 
-  adicionar(nome: string){
-    console.log(nome);
-    this.nomes = nome;
-    this.clienteNomes.push(this.nomes);
+  editar(){
+
+  }
+
+  deletar(id?: number){
+    this.clients.filter(e => e.id !== id);
   }
 
   // clientes = [
