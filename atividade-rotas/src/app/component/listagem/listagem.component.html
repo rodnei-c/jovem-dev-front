@@ -13,7 +13,7 @@
         Excluir
     </th>
   </tr>
-  <tr *ngFor="let funcionario of funcionarios"></tr>
+  <tr *ngFor="let funcionario of funcionarios">
     <td>{{ funcionario }}</td>
     <td>
       <button (click)="editar(funcionario)">Editar</button>

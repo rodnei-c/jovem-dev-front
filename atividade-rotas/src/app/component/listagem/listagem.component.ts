@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Funcionario } from '../../models/Funcionario';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-listagem',
@@ -13,19 +13,21 @@ export class ListagemComponent {
   @Output() eventFuncEditar = new EventEmitter<Funcionario>();
   @Output() eventFuncExcluir = new EventEmitter<Funcionario>();
 
-  constructor(private route: ActivatedRoute){
-    this.route.params.subscribe((valores) => {
-      console.log(valores);
-      const idFuncionario = valores['id'];
-      console.log(idFuncionario);
-    })
+  constructor(private route: Router)
+  {
+    //   this.route.params.subscribe((valores) => {
+    //   console.log(valores);
+    //   const idFuncionario = valores['id'];
+    //   console.log(idFuncionario);
+    // })
   }
 
-  editarCliente(funcionario : any){
+  editar(funcionario : Funcionario){
+    this.route.navigateByUrl(`/cliente/cadastro/${funcionario.id}`);
     this.eventFuncEditar.emit(funcionario)
   }
 
-  excluirCliente(funcionario : any){
+  excluir(funcionario : Funcionario){
     this.eventFuncExcluir.emit(funcionario)
   }
 
