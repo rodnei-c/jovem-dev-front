@@ -10,4 +10,9 @@
       Excluir
     </th>
   </tr>
+  <tr *ngFor="let usuario of usuarios">
+    <td>{{ usuario.name }}</td>
+    <td><input type="button" value="Editar" (click)="editarUsuario()"></td>
+    <td><input type="button" value="Excluir" (click)="excluirUsuario()"></td>
+  </tr>
 </table>

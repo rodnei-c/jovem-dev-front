@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CadastroUsuarioComponent } from './cadastro-usuario.component';
 import { LayoutModule } from "../../../layout/layout.module";
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -11,7 +12,8 @@ import { LayoutModule } from "../../../layout/layout.module";
   ],
   imports: [
     CommonModule,
-    LayoutModule
+    LayoutModule,
+    ReactiveFormsModule
 ]
 })
 export class CadastroUsuarioModule { }

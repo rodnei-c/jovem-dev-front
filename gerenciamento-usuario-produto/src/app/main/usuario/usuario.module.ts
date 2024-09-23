@@ -6,7 +6,7 @@ import { UsuarioComponent } from './usuario.component';
 import { CadastroUsuarioModule } from './features/cadastro-usuario/cadastro-usuario.module';
 import { ListagemUsuarioModule } from './features/listagem-usuario/listagem-usuario.module';
 import { LayoutModule } from "../layout/layout.module";
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     CadastroUsuarioModule,
     ListagemUsuarioModule,
     LayoutModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
 ]
 })
 export class UsuarioModule { }

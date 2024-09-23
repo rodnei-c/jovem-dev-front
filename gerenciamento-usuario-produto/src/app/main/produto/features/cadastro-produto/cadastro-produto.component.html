@@ -1,1 +1,8 @@
-<p>cadastro-produto works!</p>
+<form [formGroup]="form" (submit)="cadastrar()">
+  <input type="text" placeholder="Nome" formControlName="name">
+  <input type="number" formControlName="estoque">
+  <input type="number" formControlName="preco">
+  {{ this.form.get('estoque')?.getError('estoqueMinimo') }}
+  {{ this.form.get('preco')?.getError('estoqueMinimo') }}
+  <button [disabled]="!this.form.valid" type="submit">Cadastrar</button>
+</form>

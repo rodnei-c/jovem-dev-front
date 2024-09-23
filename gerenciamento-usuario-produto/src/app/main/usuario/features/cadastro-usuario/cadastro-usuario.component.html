@@ -1,6 +1,6 @@
 
-<form>
+<form [formGroup]="form" (submit)="cadastrar()">
   <label for="nome">Nome: </label>
-  <input id="nome" class="formInput" type="text">
+  <input id="nome" class="formInput" type="text" formControlName="name">
   <button type="submit">Enviar</button>
 </form>
