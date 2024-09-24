@@ -1,7 +1,8 @@
+import { Usuario } from './../../../models/Usuario';
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../../services/usuario.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Usuario } from '../../../models/Usuario';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listagem-usuario',
@@ -18,16 +19,16 @@ export class ListagemUsuarioComponent implements OnInit{
 
   constructor(
     private formBuilder: FormBuilder,
-    private usuarioService: UsuarioService
+    private usuarioService: UsuarioService,
+    private router: Router
   ) {
     console.log(usuarioService.getList());
-
   }
 
   ngOnInit(): void {
     this.usuarios = this.usuarioService.getList();
     this.buildForm();
-    this.form.patchValue({name: null})
+    this.form.patchValue({name: null});
   }
 
   buildForm(){
@@ -36,13 +37,16 @@ export class ListagemUsuarioComponent implements OnInit{
     });
   }
 
-  excluirUsuario(id: number) {
-    this.usuarioService.excluirUsuario(id);
+  excluirUsuario(usuario: Usuario) {
+    this.usuarioService.excluirUsuario(usuario.id!);
+    this.atualizarListagem();
   }
 
-  editarUsuario() {
-    throw new Error('Method not implemented.');
+  editarUsuario(id: number) {
+    this.router.navigateByUrl(`usuario/cadastro/${id}`)
   }
 
-
+  atualizarListagem(){
+    this.usuarios = this.usuarioService.getList();
+  }
 }

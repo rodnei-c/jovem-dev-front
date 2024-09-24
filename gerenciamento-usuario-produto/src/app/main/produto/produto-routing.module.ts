@@ -9,7 +9,8 @@ const routes: Routes = [
     path: '', component: ProdutoComponent,
     children: [
       { path: 'cadastro', component: CadastroProdutoComponent },
-      { path: 'listagem', component: ListagemProdutoComponent }
+      { path: 'listagem', component: ListagemProdutoComponent },
+      { path: 'cadastro/:id', component: CadastroProdutoComponent }
     ]
   }
 ];

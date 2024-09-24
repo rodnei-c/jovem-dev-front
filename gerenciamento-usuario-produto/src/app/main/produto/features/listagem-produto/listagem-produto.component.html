@@ -1,1 +1,26 @@
-<p>listagem-produto works!</p>
+<table>
+  <tr>
+    <th>
+      Nome
+    </th>
+    <th>
+      Estoque
+    </th>
+    <th>
+      Preço
+    </th>
+    <th>
+      Editar
+    </th>
+    <th>
+      Excluir
+    </th>
+  </tr>
+  <tr *ngFor="let produto of produtos">
+    <td>{{ produto.name }}</td>
+    <td>{{ produto.estoque }}</td>
+    <td>{{ produto.preco }}</td>
+    <td><input type="button" value="Editar" (click)="editarProduto(produto.id!)"></td>
+    <td><button (click)="excluirProduto(produto)">Excluir</button></td>
+  </tr>
+</table>
