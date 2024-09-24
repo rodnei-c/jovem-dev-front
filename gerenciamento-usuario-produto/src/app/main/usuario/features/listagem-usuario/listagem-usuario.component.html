@@ -13,6 +13,6 @@
   <tr *ngFor="let usuario of usuarios">
     <td>{{ usuario.name }}</td>
     <td><input type="button" value="Editar" (click)="editarUsuario()"></td>
-    <td><input type="button" value="Excluir" (click)="excluirUsuario()"></td>
+    <td><button (click)="excluirUsuario(usuario.id!)">Excluir</button></td>
   </tr>
 </table>
