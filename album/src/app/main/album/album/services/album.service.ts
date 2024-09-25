@@ -12,4 +12,8 @@ export class AlbumService {
   buscarTodosAlbuns(){
     return this.http.get('https://jsonplaceholder.typicode.com/albums').pipe(take(1));
   }
+
+  buscarPorId(id: number) {
+    return this.http.get(`https://jsonplaceholder.typicode.com/albums/${id}`).pipe(take(1))
+  }
 }

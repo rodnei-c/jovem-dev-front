@@ -10,7 +10,7 @@ import { AlbumComponent } from './main/album/album/album.component';
 
 @NgModule({
   declarations: [
-//    AppComponent,
+    AppComponent,
     LayoutComponent,
     AlbumComponent
   ],

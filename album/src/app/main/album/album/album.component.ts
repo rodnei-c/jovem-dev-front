@@ -11,9 +11,11 @@ export class AlbumComponent implements OnInit{
   albuns: Array<any> =[];
   constructor(private service: AlbumService){}
   ngOnInit(): void {
-    this.service.buscarTodosAlbuns().subscribe(values=> {
-      this.albuns.push(values);
-    });
+    for(var i = 1; i <= 100; i++){
+      this.service.buscarPorId(i).subscribe(values=> {
+        this.albuns.push(values);
+      });
+    }
     console.log(this.albuns);
   }
 
