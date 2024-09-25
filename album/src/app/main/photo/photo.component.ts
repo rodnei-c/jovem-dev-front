@@ -17,7 +17,7 @@ export class PhotoComponent implements OnInit{
   ngOnInit(): void {
 
     for(var i = 1; i <= 100; i++){
-      this.service.buscarPorAlbumId(i).subscribe(values=> {
+      this.service.buscarPorId(i).subscribe(values=> {
         this.photos.push(values);
       });
     }
