@@ -1,1 +1,6 @@
-<p>photo works!</p>
+<div *ngFor="let photo of photos">
+<div>
+<img [src]="photo.url">
+</div>
+</div>
+<router-outlet></router-outlet>

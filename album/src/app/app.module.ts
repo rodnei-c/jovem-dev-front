@@ -8,6 +8,8 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ApiInterceptor } from './main/core/api-interceptor';
 import { AlbumComponent } from './main/album/album.component';
 import { PhotoComponent } from './main/photo/photo.component';
+import { AlbumModule } from './main/album/album.module';
+import { PhotoModule } from './main/photo/photo.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { PhotoComponent } from './main/photo/photo.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AlbumModule,
+    PhotoModule
   ],
   providers: [
     {

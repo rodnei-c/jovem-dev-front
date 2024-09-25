@@ -1,6 +1,9 @@
+
 import { Component, OnInit } from '@angular/core';
 import { AlbumService } from './services/album.service';
 import { Album } from '../model/Album';
+import { Router } from '@angular/router';
+import { Photo } from '../model/Photo';
 
 @Component({
   selector: 'app-album',
@@ -9,10 +12,12 @@ import { Album } from '../model/Album';
 })
 export class AlbumComponent implements OnInit{
 
-  albuns: Array<any> =[];
-  contador: number = 0;
+  albuns: Array<Album> = [];
+  fotos: Array<Photo> = [];
 
-  constructor(private service: AlbumService){}
+  constructor(private service: AlbumService,
+              private route: Router
+  ){}
 
 
   ngOnInit(): void {
@@ -21,6 +26,8 @@ export class AlbumComponent implements OnInit{
         this.albuns.push(values);
       });
     }
+    //this.service.buscarTodosAlbuns().forEach(e => this.albuns.push(e));
+    this.service.buscarTodasFotos().forEach(e => this.fotos.push(e));
     console.log(this.albuns);
   }
 

@@ -6,7 +6,13 @@ const routes: Routes = [
 
   { path: '',
     loadChildren: () => import('./main/album/album.module').then((m) => m.AlbumModule)
+   },
+
+   {
+    path: 'photos',
+    loadChildren: () => import('./main/photo/photo.module').then((m) => m.PhotoModule)
    }
+
 
 ];
 
