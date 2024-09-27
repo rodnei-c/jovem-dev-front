@@ -1,18 +1,33 @@
-div {
-  width: fit-content;
+img {
+  height: 120px;
+  width: 150px;
 }
 
 .layout-main {
   display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  height: fit-content;
+  gap: 10px;
 }
 
 .albuns {
+  height: fit-content;
+  width: 150px;
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
   border: 1px solid black;
-  padding: 50px;
-  max-height: 80px;
-  max-width: 80px;
-  // background-image: url('../../../../../../semana-0/imagens/R.png');
-  // background-size: cover;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+a {
+  text-decoration: none;
+}
+
+
 
 

@@ -22,4 +22,8 @@ export class AlbumService {
   buscarTodasFotos(){
     return this.http.get<Photo>('https://jsonplaceholder.typicode.com/photos').pipe(take(1));
   }
+
+  buscarFotosPorAlbumId(id: number){
+    return this.http.get<Array<Photo>>(`https://jsonplaceholder.typicode.com/albums/${id}/photos`).pipe(take(1));
+  }
 }

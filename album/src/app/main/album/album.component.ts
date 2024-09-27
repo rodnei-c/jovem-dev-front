@@ -4,6 +4,7 @@ import { AlbumService } from './services/album.service';
 import { Album } from '../model/Album';
 import { Router } from '@angular/router';
 import { Photo } from '../model/Photo';
+import { PhotoService } from '../photo/services/photo.service';
 
 @Component({
   selector: 'app-album',
@@ -13,22 +14,22 @@ import { Photo } from '../model/Photo';
 export class AlbumComponent implements OnInit{
 
   albuns: Array<Album> = [];
-  fotos: Array<Photo> = [];
 
   constructor(private service: AlbumService,
-              private route: Router
+              private photoService: PhotoService
   ){}
 
 
   ngOnInit(): void {
     // for(var i = 1; i <= 100; i++){
-      this.service.buscarTodosAlbuns().subscribe(values=> {
+      this.service.buscarTodosAlbuns().subscribe(values => {
         this.albuns = values;
+        this.albuns.forEach(e => this.photoService.buscarPorAlbumId(e.id!).subscribe(
+          foto => { e.thumbnail = Object.values(foto).shift() }
+        ))
       });
 //    }
     //this.service.buscarTodosAlbuns().forEach(e => this.albuns.push(e));
-    this.service.buscarTodasFotos().forEach(e => this.fotos.push(e));
-    console.log(this.albuns);
   }
 
 }

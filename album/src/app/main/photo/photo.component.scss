@@ -1,4 +1,33 @@
 img {
-  max-height: 200px;
-  max-width: 200px;
+  height: 120px;
+  width: 150px;
 }
+
+.fotos-layout {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  height: fit-content;
+  gap: 10px;
+}
+
+.fotos {
+  height: fit-content;
+  width: 150px;
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  border: 1px solid black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+

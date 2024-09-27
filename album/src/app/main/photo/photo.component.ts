@@ -1,6 +1,9 @@
+import { AlbumService } from './../album/services/album.service';
 import { Component, OnInit } from '@angular/core';
 import { PhotoService } from './services/photo.service';
 import { Photo } from '../model/Photo';
+import { ActivatedRoute } from '@angular/router';
+import { Album } from '../model/Album';
 
 @Component({
   selector: 'app-photo',
@@ -9,20 +12,25 @@ import { Photo } from '../model/Photo';
 })
 export class PhotoComponent implements OnInit{
 
-  photos: Array<Photo> = [];
-  contador: number = 0;
+  photos?: Array<Photo>;
+  albumId?: number;
+  album!: Album;
 
-  constructor(private service: PhotoService){}
+  constructor(private service: PhotoService,
+              private albumService: AlbumService,
+              private activatedRoute: ActivatedRoute
+  ){
+    activatedRoute.params.subscribe( params => {
+      this.albumId = params['albumId'];
+    })
+  }
 
   ngOnInit(): void {
 
-    for(var i = 1; i <= 100; i++){
-      this.service.buscarPorId(i).subscribe(values=> {
-        this.photos.push(values);
-      });
-    }
-    console.log(this.photos);
+    this.service.buscarPorAlbumId(1).subscribe(values=> {
+      this.photos = values;
 
-  }
+  })
+}
 
 }

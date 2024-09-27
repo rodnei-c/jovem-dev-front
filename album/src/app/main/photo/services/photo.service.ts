@@ -15,10 +15,10 @@ export class PhotoService {
   }
 
   buscarPorId(id: number) {
-    return this.http.get<Photo>(`https://jsonplaceholder.typicode.com/photos/${id}`).pipe(take(1));
+    return this.http.get(`https://jsonplaceholder.typicode.com/photos/${id}`).pipe(take(1));
   }
 
   buscarPorAlbumId(id: number){
-    return this.http.get<Photo>(`https://jsonplaceholder.typicode.com/photos`, { params: { albumId: id.toString() } }).pipe(take(1));
+    return this.http.get<Array<Photo>>(`https://jsonplaceholder.typicode.com/photos`, { params: { albumId: id.toString() } }).pipe(take(1));
   }
 }
